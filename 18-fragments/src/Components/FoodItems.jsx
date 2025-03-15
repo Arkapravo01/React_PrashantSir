@@ -5,8 +5,8 @@ function FoodItems(props) {
     <div>
       <ul className="list-group">
         {props.foodItems.map((item, idx) => (
-          <li key={item} className="list-group-item">
-            {item}
+          <li key={item} className="list-group-item kg-item">
+            <span className="kg-span">{item}</span>
           </li>
         ))}
       </ul>
