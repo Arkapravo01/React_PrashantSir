@@ -1,8 +1,10 @@
 import React from "react";
+import FoodItems from "./Components/FoodItems";
+import ErrorMessage from "./Components/ErrorMessage";
 
 function App() {
   let foodItems = [
-    "Dal",
+    "Sabzi",
     "Green Vegetables",
     "Roti",
     "Salad",
@@ -10,19 +12,13 @@ function App() {
     "Ghee",
     "Burgers",
   ];
+  //Logical Operators Conditional Rendering
   // let emptymessage = foodItems.length == 0 ? <h3>I am still hungry</h3> : null;
   return (
     <>
       <h1>Healthy Foods:</h1>
-      {/* {emptymessage} */}
-      {foodItems.length==0 && <h3>I am still hungry</h3>}
-      <ul className="list-group">
-        {foodItems.map((item,idx) => (
-          <li key={idx} className="list-group-item">
-            {item}
-          </li>
-        ))}
-      </ul>
+      <FoodItems foodItems={foodItems} />
+      <ErrorMessage foodItems={foodItems} />
     </>
   );
 }
